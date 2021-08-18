@@ -5,7 +5,7 @@
       "name": "Delivery Challenge robot",
       "type": "colcon build",
       "cfg": {
-        "workingDir": "./<project_dir2>/robot_ws",
+        "workingDir": "./aws-robomaker-sample-application-delivery-challenge/robot_ws",
         "cmdArgs": ""
       }
     },
@@ -14,7 +14,7 @@
       "name": "Delivery Challenge robot",
       "type": "colcon bundle",
       "cfg": {
-        "workingDir": "./<project_dir2>/robot_ws",
+        "workingDir": "./aws-robomaker-sample-application-delivery-challenge/robot_ws",
         "cmdArgs": ""
       }
     },
@@ -24,10 +24,10 @@
       "type": "simulation",
       "cfg": {
         "simulationApp": {
-          "name": "<simulation_app_name>",
-          "sourceBundleFile": "./<project_dir2>/simulation_ws/bundle/output.tar",
+          "name": "deliverychallenge_sumulation",
+          "sourceBundleFile": "./aws-robomaker-sample-application-delivery-challenge/simulation_ws/bundle/output.tar",
           "architecture": "X86_64",
-          "s3Bucket": "<bucket_name>",
+          "s3Bucket": "deliverychallengeroot-robomakerdeliverychallenges-l2x5203nbj5i",
           "launchConfig": {
             "packageName": "delivery_challenge_simulation",
             "launchFile": "create_stage.launch",
@@ -37,7 +37,7 @@
           },
           "simulationSoftwareSuite": {
             "name": "Gazebo",
-            "version": "<gazebo_version>"
+            "version": "9"
           },
           "renderingEngine": {
             "name": "OGRE",
@@ -45,16 +45,16 @@
           },
           "robotSoftwareSuite": {
             "name": "ROS",
-            "version": "<ros_version>"
+            "version": "Melodic"
           }
         },
         "robotApp": {
-          "name": "<robot_app_name>",
-          "s3Bucket": "<bucket_name>",
-          "sourceBundleFile": "./<project_dir2>/robot_ws/bundle/output.tar",
+          "name": "deliverychallenge_robot",
+          "s3Bucket": "deliverychallengeroot-robomakerdeliverychallenges-l2x5203nbj5i",
+          "sourceBundleFile": "./aws-robomaker-sample-application-delivery-challenge/robot_ws/bundle/output.tar",
           "architecture": "X86_64",
           "robotSoftwareSuite": {
-            "version": "<ros_version>",
+            "version": "Melodic",
             "name": "ROS"
           },
           "launchConfig": {
@@ -68,10 +68,10 @@
         "simulation": {
           "maxJobDurationInSeconds": 1800,
           "failureBehavior": "Fail",
-          "iamRole": "<iam_role>",
+          "iamRole": "arn:aws:iam::520185277163:role/delivery-challenge-simulation-role-us-east-2",
           "vpcConfig": {
-            "securityGroups": <security_groups>,
-            "subnets": <subnets>,
+            "securityGroups": ["sg-d3775498"],
+            "subnets": ["subnet-5da28811", "subnet-2af13357", "subnet-6095010b"],
             "assignPublicIp": true
           },
           "tags": {}
@@ -84,10 +84,10 @@
       "type": "simulation",
       "cfg": {
         "simulationApp": {
-          "name": "<simulation_app_name>",
-          "sourceBundleFile": "./<project_dir2>/simulation_ws/bundle/output.tar",
+          "name": "deliverychallenge_sumulation",
+          "sourceBundleFile": "./aws-robomaker-sample-application-delivery-challenge/simulation_ws/bundle/output.tar",
           "architecture": "X86_64",
-          "s3Bucket": "<bucket_name>",
+          "s3Bucket": "deliverychallengeroot-robomakerdeliverychallenges-l2x5203nbj5i",
           "launchConfig": {
             "packageName": "delivery_challenge_simulation",
             "launchFile": "create_stage0.launch",
@@ -97,7 +97,7 @@
           },
           "simulationSoftwareSuite": {
             "name": "Gazebo",
-            "version": "<gazebo_version>"
+            "version": "9"
           },
           "renderingEngine": {
             "name": "OGRE",
@@ -105,16 +105,16 @@
           },
           "robotSoftwareSuite": {
             "name": "ROS",
-            "version": "<ros_version>"
+            "version": "Melodic"
           }
         },
         "robotApp": {
-          "name": "<robot_app_name>",
-          "s3Bucket": "<bucket_name>",
-          "sourceBundleFile": "./<project_dir2>/robot_ws/bundle/output.tar",
+          "name": "deliverychallenge_robot",
+          "s3Bucket": "deliverychallengeroot-robomakerdeliverychallenges-l2x5203nbj5i",
+          "sourceBundleFile": "./aws-robomaker-sample-application-delivery-challenge/robot_ws/bundle/output.tar",
           "architecture": "X86_64",
           "robotSoftwareSuite": {
-            "version": "<ros_version>",
+            "version": "Melodic",
             "name": "ROS"
           },
           "launchConfig": {
@@ -129,10 +129,10 @@
         "simulation": {
           "maxJobDurationInSeconds": 5400,
           "failureBehavior": "Fail",
-          "iamRole": "<iam_role>",
+          "iamRole": "arn:aws:iam::520185277163:role/delivery-challenge-simulation-role-us-east-2",
           "vpcConfig": {
-            "securityGroups": <security_groups>,
-            "subnets": <subnets>,
+            "securityGroups": ["sg-d3775498"],
+            "subnets": ["subnet-5da28811", "subnet-2af13357", "subnet-6095010b"],
             "assignPublicIp": true
           },
           "tags": {}

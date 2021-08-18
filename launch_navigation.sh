@@ -2,22 +2,22 @@
 
 #### CUSTOMIZE HERE #####
 
-S3_BUCKET="<bucket_name>"
-ROLE_ARN="<iam_role>"
-SUBNET='<subnets>' # example  '["subnet-1303f974", "subnet-939d74da", "subnet-d7063791"]'
-SECURITY_GROUP='<security_groups>' # example '["sg-012ffd67"]'
+S3_BUCKET="deliverychallengeroot-robomakerdeliverychallenges-l2x5203nbj5i"
+ROLE_ARN="arn:aws:iam::520185277163:role/delivery-challenge-simulation-role-us-east-2"
+SUBNET='["subnet-5da28811", "subnet-2af13357", "subnet-6095010b"]' # example  '["subnet-1303f974", "subnet-939d74da", "subnet-d7063791"]'
+SECURITY_GROUP='["sg-d3775498"]' # example '["sg-012ffd67"]'
 
-S3_BUNDLE_BASEPATH="<project_dir>"
+S3_BUNDLE_BASEPATH="aws-robomaker-sample-application-delivery-challenge"
 
 PATH_TO_SIM_APP_WORKSPACE="simulation_ws"
 PATH_TO_ROBOT_APP_WORKSPACE="robot_ws"
 
-SIMULATION_APPNAME="<simulation_app_name>"
+SIMULATION_APPNAME="deliverychallenge_sumulation"
 SIM_APP_PACKAGE="delivery_challenge_simulation"
 SIM_APP_LAUNCH_FILE="create_stage.launch"
 SIM_APP_ENV="{\"TURTLEBOT3_MODEL\": \"burger\"}"
 
-ROBOT_APPNAME="<robot_app_name>"
+ROBOT_APPNAME="deliverychallenge_robot"
 ROBOT_APP_PACKAGE="delivery_robot_sample"
 ROBOT_APP_LAUNCH_FILE="navigation_simulation.launch"
 ROBOT_APP_ENV="{}"
